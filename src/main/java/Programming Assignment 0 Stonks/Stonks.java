@@ -62,7 +62,7 @@ public class Stonks {
      *        symbols and 0.0 shares.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @return the standard portfolio setup
      */
     public static double[] setupPortfolio(String[] stocks) {
@@ -80,13 +80,13 @@ public class Stonks {
      *        Calculates the amount of shares from the budget / price.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param prices
-     *        the buying price of one of all the given stocks
+     *            the buying price of one of all the given stocks
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @param input
-     *        user input scanner
+     *            user input scanner
      * @return true if buying was successful and false if not
      */
     private static boolean buyingSimulation(String[] stocks, double[] prices, double[] portfolio,
@@ -124,11 +124,11 @@ public class Stonks {
      * Sells the user provided amount of shares of a stock.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @param input
-     *        user input scanner
+     *            user input scanner
      * @return true if selling was successful and false if not
      */
     private static boolean sellingSimulation(String[] stocks, double[] portfolio, Scanner input) {
@@ -157,9 +157,9 @@ public class Stonks {
      * Displays the current state of the portfolio without showing 0.0 values.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      */
     private static void displaySimulation(String[] stocks, double[] portfolio) {
         System.out.println();
@@ -175,13 +175,13 @@ public class Stonks {
      * Saves the current state of the portfolio to a file specified by the user.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @param input
-     *        scanner object to read users file name
+     *            scanner object to read users file name
      * @throws FileNotFoundException
-     *         when user inputted file is not found
+     *             when user inputted file is not found
      */
     private static void saveSimulation(String[] stocks, double[] portfolio, Scanner input)
             throws FileNotFoundException {
@@ -203,10 +203,10 @@ public class Stonks {
      * Loads the symbols from a TSV file.
      *
      * @param filename
-     *        the name of the file to fetch the stock symbols from
+     *            the name of the file to fetch the stock symbols from
      * @return an array of strings representing the stock symbols
      * @throws FileNotFoundException
-     *         when user inputted file is not found
+     *             when user inputted file is not found
      */
     public static String[] getSymbolsFromFile(String filename) throws FileNotFoundException {
         Scanner fileScan = new Scanner(new File(filename));
@@ -232,10 +232,10 @@ public class Stonks {
      * Loads the prices from the TSV file.
      *
      * @param filename
-     *        the name of the file to fetch the stock symbols from
+     *            the name of the file to fetch the stock symbols from
      * @return an array of strings representing the stock prices
      * @throws FileNotFoundException
-     *         when user inputted file is not found
+     *             when user inputted file is not found
      */
     public static double[] getPricesFromFile(String filename) throws FileNotFoundException {
         Scanner fileScan = new Scanner(new File(filename));
@@ -261,9 +261,9 @@ public class Stonks {
      * Finds the index of a symbol in the given symbols array.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param symbol
-     *        stock ticker, e.g. AAPL
+     *            stock ticker, e.g. AAPL
      * @return the index of the stock symbol in the stocks array
      */
     public static int findSymbolIndex(String[] stocks, String symbol) {
@@ -279,13 +279,13 @@ public class Stonks {
      * Add shares to the portfolio.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @param symbol
-     *        stock ticker, e.g. AAPL
+     *            stock ticker, e.g. AAPL
      * @param shares
-     *        amount of the shares of stock bought
+     *            amount of the shares of stock bought
      * @return true if succeeded and false if not
      */
     public static boolean addSharesToPortfolio(String[] stocks, double[] portfolio, String symbol,
@@ -303,13 +303,13 @@ public class Stonks {
      * Subtract shares from the portfolio.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @param symbol
-     *        stock ticker, e.g. AAPL
+     *            stock ticker, e.g. AAPL
      * @param sharesToSell
-     *        amount of shares of stock to be sold
+     *            amount of shares of stock to be sold
      * @return true if succeeded and false if not
      */
     public static boolean subtractSharesFromPortfolio(String[] stocks, double[] portfolio,
@@ -333,9 +333,9 @@ public class Stonks {
      * converting them to dollars and adding them up
      *
      * @param prices
-     *        the buying price of one of all the given stocks
+     *            the buying price of one of all the given stocks
      * @param portfolio
-     *        the amount of stock owned by the owner of the portfolio
+     *            the amount of stock owned by the owner of the portfolio
      * @return valuation of portfolio based on its owned shares
      */
     public static double getPortfolioValuation(double[] prices, double[] portfolio) {
@@ -356,11 +356,11 @@ public class Stonks {
      * Gets the price of a stock from its symbol.
      *
      * @param stocks
-     *        the available stock tickers, e.g. AAPL
+     *            the available stock tickers, e.g. AAPL
      * @param prices
-     *        the buying price of one of all the given stocks
+     *            the buying price of one of all the given stocks
      * @param symbol
-     *        stock ticker, e.g. AAPL
+     *            stock ticker, e.g. AAPL
      * @return the price of stock given its symbol
      */
     public static double getPrice(String[] stocks, double[] prices, String symbol) {

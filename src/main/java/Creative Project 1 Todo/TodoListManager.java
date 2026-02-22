@@ -47,7 +47,7 @@ public class TodoListManager {
      * Prints the `todos` List to standard out indexed by numbers, starting at 1.
      *
      * @param todos:
-     *        ArrayList of todo items of type String
+     *            ArrayList of todo items of type String
      */
     public static void printTodos(List<String> todos) {
         System.out.println("Today's TODOs:");
@@ -65,9 +65,9 @@ public class TodoListManager {
      * list on 'enter' Otherwise specify an index to add an item
      *
      * @param console:
-     *        Scanner object to parse user input
+     *            Scanner object to parse user input
      * @param todos:
-     *        ArrayList of todo items of type String
+     *            ArrayList of todo items of type String
      */
     public static void addItem(Scanner console, List<String> todos) {
         System.out.print("What would you like to add? ");
@@ -101,9 +101,9 @@ public class TodoListManager {
      * remove a range of items from `todos`.
      *
      * @param console:
-     *        Scanner object to parse user input
+     *            Scanner object to parse user input
      * @param todos:
-     *        ArrayList of todo items of type String
+     *            ArrayList of todo items of type String
      */
     public static void markItemAsDone(Scanner console, List<String> todos) {
         if (todos.isEmpty()) {
@@ -134,11 +134,11 @@ public class TodoListManager {
      *        old todo's in the todos List on load.
      *
      * @param console:
-     *        Scanner object to parse user input
+     *            Scanner object to parse user input
      * @param todos:
-     *        ArrayList of todo items of type String
+     *            ArrayList of todo items of type String
      * @throws FileNotFoundException
-     *         when the user inputted file is not found
+     *             when the user inputted file is not found
      */
     public static void loadItems(Scanner console, List<String> todos) throws FileNotFoundException {
         System.out.print("File name? ");
@@ -158,11 +158,11 @@ public class TodoListManager {
      * @brief Prints `todos` items to a user specified file
      *
      * @param console:
-     *        Scanner object to parse user input
+     *            Scanner object to parse user input
      * @param todos:
-     *        ArrayList of todo items of type String
+     *            ArrayList of todo items of type String
      * @throws FileNotFoundException
-     *         when the user inputted file is not found
+     *             when the user inputted file is not found
      */
     public static void saveItems(Scanner console, List<String> todos) throws FileNotFoundException {
         System.out.print("File name? ");
