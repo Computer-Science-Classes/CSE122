@@ -1,5 +1,6 @@
+# UW Seattle CSE 122 (Winter Quarter of 2026)
 
-### Precomit
+## Precomit
 
 Setup pre-commit hook
 ```bash
