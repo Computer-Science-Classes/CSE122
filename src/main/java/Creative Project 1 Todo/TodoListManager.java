@@ -1,10 +1,28 @@
 import java.io.*;
 import java.util.*;
 
-/// Gives CRUD operations for a todos Arraylist of type string.
-///
-/// Prompts the user in a sentinel while loop for their input and acts on their
-/// input if valid.
+/**
+ * Command-line TODO list application.
+ *
+ * <p>
+ * Provides basic CRUD style operations on an in-memory list of TODO items
+ * (where each item is a {@link String}). The program runs an interactive loop
+ * that repeatedly prompts the user to choose an action:
+ * </p>
+ *
+ * <ul>
+ * <li><b>Add<b> a new TODO (optionally at a specific position)</li>
+ * <li><b>Mark</b> one TODO (or a range of TODOs) as done by removing
+ * it/them</li>
+ * <li><b>Load</b> TODOs from a text file (one item per line)</li>
+ * <li><b>Save</b> TODOs to a text file (one item per line)</li>
+ * <li><b>Quit</b></li>
+ * </ul>
+ *
+ * <p>
+ * File format: plain text, one TODO per line.
+ * </p>
+ */
 public class TodoListManager {
     public static final boolean EXTENSION_FLAG = true;
 
@@ -17,8 +35,8 @@ public class TodoListManager {
 
         while (!quit) {
             System.out.println("What would you like to do?");
-            System.out.print(
-                    "(A)dd TODO, (M)ark TODO as done, (L)oad TODOs," + "(S)ave TODOs, (Q)uit? ");
+            System.out
+                    .print("(A)dd TODO, (M)ark TODO as done, (L)oad TODOs, (S)ave TODOs, (Q)uit? ");
             String input = console.nextLine();
 
             if (input.equalsIgnoreCase("A")) {
@@ -155,7 +173,7 @@ public class TodoListManager {
     }
 
     /**
-     * @brief Prints `todos` items to a user specified file
+     * Prints `todos` items to a user specified file
      *
      * @param console:
      *            Scanner object to parse user input
