@@ -61,7 +61,7 @@ public class MusicPlaylist {
     }
 
     /**
-     * Removes the head of the playlist `Queue` and pushes it to the history stack
+     * Removes the head of the playlist `Queue` and pushes it to the history stack.
      *
      * @param playlist:
      *            the `Queue` of songs to play a song from
@@ -79,7 +79,7 @@ public class MusicPlaylist {
     }
 
     /**
-     * Prints the history `Stack` in reverse chronological order
+     * Prints the history `Stack` in reverse chronological order.
      *
      * @param history:
      *            the `Stack` of songs which have been played
@@ -102,7 +102,7 @@ public class MusicPlaylist {
     }
 
     /**
-     * Clears the history `Stack` by popping all its elements
+     * Clears the history `Stack` by popping all its elements.
      *
      * @param history:
      *            the `Stack` of songs which have been played
@@ -115,9 +115,11 @@ public class MusicPlaylist {
 
     /**
      * Deletes the history `Stack` in either chronological or reverse chronological
-     * order. The user inputted number is the amount to delete. If the number is
-     * signed the deletion happens in chronological order, otherwise elements are
-     * deleted in reverse chronological order
+     * order.
+     *
+     * The user inputted number is the amount to delete. If the number is signed the
+     * deletion happens in chronological order, otherwise elements are deleted in
+     * reverse chronological order
      *
      * @param input:
      *            user input scanner
@@ -164,7 +166,7 @@ public class MusicPlaylist {
     }
 
     /**
-     * Prints the playlist `Queue` order
+     * Prints the playlist `Queue` order.
      *
      * @param playlist:
      *            the `Queue` of songs to play a song from
@@ -174,8 +176,12 @@ public class MusicPlaylist {
             throw new IllegalStateException();
         }
 
-        for (String song : playlist) {
+        int size = playlist.size();
+
+        for (int i = 0; i < size; i++) {
+            String song = playlist.remove();
             System.out.println("    " + song);
+            playlist.add(song);
         }
     }
 }
