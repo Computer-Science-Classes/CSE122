@@ -28,9 +28,18 @@ jobs:
         run: |
           curl -L https://github.com/gituser12981u2/javaWhitelist/releases/latest/download/javaWhitelist.jar -o javaWhitelist.jar
 
-      - name: Run whitelist checker 
+      - name: Run whitelist checker
         run: |
-          java -jar javaWhitelist.jar src/main/java
+          set -euo pipefail
+          SRC_DIRS=$(find . -type d -path '*/src/main/java' | sort)
+          if [ -z "$SRC_DIRS" ]; then
+            echo "No src/main/java directories found; skipping."
+            exit 0
+          fi
+          while IFS= read -r d; do
+            echo "javaWhitelist $d"
+            java -jar javaWhitelist.jar "$d"
+          done <<< "$SRC_DIRS"
 
       - name: Verify (format check + checkstyle + compile)
         run: mvn -B -ntp verify

@@ -20,7 +20,19 @@
 - **P3 Program Linting** (02/27-03/05)
 - **C3 OOP It!**         (03/06-03/12)
 
-Each P/C has its **own README.md** with its specifications in `src/main/java/<P#/C#>`
+Each P/C has its **own README.md** with its specifications in `<P#/C#>/README.md`
+
+## Running
+
+Use
+```bash
+make run module=<p#/c#>-<name> 
+```
+
+Example:
+```bash
+make run module=p0-stonks
+```
 
 ## Pre-commit
 
