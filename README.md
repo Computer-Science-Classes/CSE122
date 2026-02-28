@@ -33,12 +33,3 @@ Example:
 ```bash
 make run module=p0-stonks
 ```
-
-## Pre-commit
-
-Setup pre-commit hook
-
-```bash
-ln -s ../../scripts/pre-commit.sh .git/hooks/pre-commit
-chmod +x scripts/pre-commit.sh
-```

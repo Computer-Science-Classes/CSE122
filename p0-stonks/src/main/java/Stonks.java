@@ -330,7 +330,7 @@ public class Stonks {
 
     /**
      * Gets the valuation of the given portfolio by getting the shares and
-     * converting them to dollars and adding them up
+     * converting them to dollars and adding them up.
      *
      * @param prices
      *            the buying price of one of all the given stocks

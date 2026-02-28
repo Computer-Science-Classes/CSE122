@@ -38,7 +38,7 @@ jobs:
           fi
           while IFS= read -r d; do
             echo "javaWhitelist $d"
-            java -jar javaWhitelist.jar "$d"
+            java -jar javaWhitelist.jar --allowlist allowlist.txt "$d"
           done <<< "$SRC_DIRS"
 
       - name: Verify (format check + checkstyle + compile)

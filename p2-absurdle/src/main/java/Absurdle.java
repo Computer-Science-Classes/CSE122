@@ -1,6 +1,26 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * Absurdle is a CLI based word guessing game inspired by Wordle.
+ *
+ * <p>
+ * The game operates by:
+ * <ul>
+ * <li>Loading a dictionary of words from a file</li>
+ * <li>Filtering words to a specified length</li>
+ * <li>Partitioning candidate words into pattern buckets</li>
+ * <li>Selecting the largest bucket to prolong the game</li>
+ * </ul>
+ *
+ * <p>
+ * Feedback is provided using colored tile representations:
+ * <ul>
+ * <li>{@link #GREEN}: correct letter in the correct position</li>
+ * <li>{@link #YELLOW}: correct letter in the wrong position</li>
+ * <li>{@link #GRAY}: letter not present in the word</li>
+ * </ul>
+ */
 public class Absurdle {
     public static final String GREEN = "🟩";
     public static final String YELLOW = "🟨";
@@ -37,6 +57,7 @@ public class Absurdle {
     // [[ PROVIDED ]]
     // Prints out the given list of patterns.
     // - List<String> patterns: list of patterns from the game
+    @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public static void printPatterns(List<String> patterns) {
         for (String pattern : patterns) {
             System.out.println(pattern);
@@ -48,6 +69,7 @@ public class Absurdle {
     // Returns
     // false otherwise.
     // - List<String> patterns: list of patterns from the game
+    @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public static boolean isFinished(List<String> patterns) {
         if (patterns.isEmpty()) {
             return false;
@@ -60,6 +82,7 @@ public class Absurdle {
     // Loads the contents of a given file Scanner into a List<String> and returns
     // it.
     // - Scanner dictScan: contains file contents
+    @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public static List<String> loadFile(Scanner dictScan) {
         List<String> contents = new ArrayList<>();
         while (dictScan.hasNext()) {
@@ -76,12 +99,13 @@ public class Absurdle {
      * Filters the provided word list to include only words of the specified length
      * and resets all game state needed to begin play.
      *
-     * @param dictionary
-     *            the full list of candidate words
+     * @param contents
+     *            the words used to prepare the dictionary.
      * @param wordLength
      *            the required word length for this round
+     * @return the prepared dictionary of words for a new game.
      * @throws IllegalArgumentException
-     *             if wordLength is less than 1
+     *             if wordLength is less than 1.
      */
     public static Set<String> prepDictionary(List<String> contents, int wordLength) {
         if (wordLength < 1) {

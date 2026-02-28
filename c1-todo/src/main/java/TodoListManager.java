@@ -11,7 +11,7 @@ import java.util.*;
  * </p>
  *
  * <ul>
- * <li><b>Add<b> a new TODO (optionally at a specific position)</li>
+ * <li><b>Add</b> a new TODO (optionally at a specific position)</li>
  * <li><b>Mark</b> one TODO (or a range of TODOs) as done by removing
  * it/them</li>
  * <li><b>Load</b> TODOs from a text file (one item per line)</li>
@@ -64,7 +64,7 @@ public class TodoListManager {
     /**
      * Prints the `todos` List to standard out indexed by numbers, starting at 1.
      *
-     * @param todos:
+     * @param todos
      *            ArrayList of todo items of type String
      */
     public static void printTodos(List<String> todos) {
@@ -82,9 +82,9 @@ public class TodoListManager {
      * Take in user input to add an item to the `todos` List. Adds to the end of the
      * list on 'enter' Otherwise specify an index to add an item
      *
-     * @param console:
+     * @param console
      *            Scanner object to parse user input
-     * @param todos:
+     * @param todos
      *            ArrayList of todo items of type String
      */
     public static void addItem(Scanner console, List<String> todos) {
@@ -118,9 +118,9 @@ public class TodoListManager {
      * Take in user input to remove an item from the `todos` List. Optionally, can
      * remove a range of items from `todos`.
      *
-     * @param console:
+     * @param console
      *            Scanner object to parse user input
-     * @param todos:
+     * @param todos
      *            ArrayList of todo items of type String
      */
     public static void markItemAsDone(Scanner console, List<String> todos) {
@@ -151,9 +151,9 @@ public class TodoListManager {
      * @brief Adds the items to the `todos` List via a user specified file. Clears
      *        old todo's in the todos List on load.
      *
-     * @param console:
+     * @param console
      *            Scanner object to parse user input
-     * @param todos:
+     * @param todos
      *            ArrayList of todo items of type String
      * @throws FileNotFoundException
      *             when the user inputted file is not found
@@ -173,11 +173,11 @@ public class TodoListManager {
     }
 
     /**
-     * Prints `todos` items to a user specified file
+     * Prints `todos` items to a user specified file.
      *
-     * @param console:
+     * @param console
      *            Scanner object to parse user input
-     * @param todos:
+     * @param todos
      *            ArrayList of todo items of type String
      * @throws FileNotFoundException
      *             when the user inputted file is not found

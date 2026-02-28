@@ -1,7 +1,9 @@
 import java.util.*;
 
-/// Contains CRUD and view methods for the music playlist utilizing the Queue
-/// and Stack data structures
+/**
+ * Contains CRUD and view methods for the music playlist utilizing the Queue and
+ * Stack data structures.
+ */
 public class MusicPlaylist {
     public static void main(String[] args) {
         System.out.println("Welcome to the CSE 122 Music Playlist!");
@@ -46,11 +48,11 @@ public class MusicPlaylist {
     }
 
     /**
-     * Adds a song to the playlist `Queue`
+     * Adds a song to the playlist `Queue`.
      *
-     * @param input:
+     * @param input
      *            user input scanner
-     * @param playlist:
+     * @param playlist
      *            the `Queue` of songs to add a song too
      */
     private static void addSong(Scanner input, Queue<String> playlist) {
@@ -63,10 +65,12 @@ public class MusicPlaylist {
     /**
      * Removes the head of the playlist `Queue` and pushes it to the history stack.
      *
-     * @param playlist:
+     * @param playlist
      *            the `Queue` of songs to play a song from
-     * @param history:
+     * @param history
      *            the `Stack` of songs which have been played
+     * @throws IllegalStateException
+     *             if {@code playlist} is empty
      */
     private static void playSong(Queue<String> playlist, Stack<String> history) {
         if (playlist.isEmpty()) {
@@ -81,8 +85,10 @@ public class MusicPlaylist {
     /**
      * Prints the history `Stack` in reverse chronological order.
      *
-     * @param history:
+     * @param history
      *            the `Stack` of songs which have been played
+     * @throws IllegalStateException
+     *             if {@code history} is empty
      */
     private static void printHistory(Stack<String> history) {
         if (history.isEmpty()) {
@@ -104,7 +110,7 @@ public class MusicPlaylist {
     /**
      * Clears the history `Stack` by popping all its elements.
      *
-     * @param history:
+     * @param history
      *            the `Stack` of songs which have been played
      */
     private static void clearHistory(Stack<String> history) {
@@ -121,10 +127,13 @@ public class MusicPlaylist {
      * deletion happens in chronological order, otherwise elements are deleted in
      * reverse chronological order
      *
-     * @param input:
+     * @param input
      *            user input scanner
-     * @param history:
+     * @param history
      *            the `Stack` of songs which have been played
+     * @throws IllegalArgumentException
+     *             if {@code normalizedDelete} is greater than the size of
+     *             {@code history}
      */
     private static void deleteHistory(Scanner input, Stack<String> history) {
         System.out.println("A positive number will delete from recent history.");
@@ -168,8 +177,10 @@ public class MusicPlaylist {
     /**
      * Prints the playlist `Queue` order.
      *
-     * @param playlist:
+     * @param playlist
      *            the `Queue` of songs to play a song from
+     * @throws IllegalStateException
+     *             if {@code playlist} is empty
      */
     private static void viewPlaylist(Queue<String> playlist) {
         if (playlist.isEmpty()) {

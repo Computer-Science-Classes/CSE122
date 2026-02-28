@@ -1,9 +1,11 @@
 import java.util.*;
 
-/// The MusicBox class orchestrates the user lead composition of songs
-/// and their internal melodies
-///
-/// It features global NOTES, SHARP, and FLAT variables for convenience.
+/**
+ * The MusicBox class orchestrates the user lead composition of songs and their
+ * internal melodies.
+ *
+ * It features global NOTES, SHARP, and FLAT variables for convenience.
+ */
 public class MusicBox {
     public static final String NOTES = "CDEFGAB";
     public static final String SHARP = "♯";
@@ -23,9 +25,9 @@ public class MusicBox {
 
     /**
      * Prompts the user to enter N melodies and constructs a 2D array representing
-     * the full song
+     * the full song.
      *
-     * @param console:
+     * @param console
      *            used to read user input
      * @return a 2D array where each row is a melody and each column a note
      */
@@ -47,13 +49,13 @@ public class MusicBox {
     }
 
     /**
-     * Prompts the user to fill in the notes for a single melody
+     * Prompts the user to fill in the notes for a single melody.
      *
-     * @param console:
+     * @param console
      *            used to read user input
-     * @param melody:
+     * @param melody
      *            array to store the melody notes
-     * @param melodyIndex:
+     * @param melodyIndex
      *            index of the melody being composed
      */
     private static void composeMelody(Scanner console, String[] melody, int melodyIndex) {
@@ -71,7 +73,7 @@ public class MusicBox {
      * Determines the most common natural note in each melody. Sharps and flats are
      * ignored completely.
      *
-     * @param song:
+     * @param song
      *            a 2D array representing a song
      * @return an array where each element is the most common natural note in the
      *         corresponding melody
@@ -89,9 +91,9 @@ public class MusicBox {
     }
 
     /**
-     * Counts natural notes in a single melody row
+     * Counts natural notes in a single melody row.
      *
-     * @param melody:
+     * @param melody
      *            array to store the melody notes
      * @return the counts of each natural
      */
@@ -113,7 +115,7 @@ public class MusicBox {
     }
 
     /**
-     * Finds the index of the largest value in an array
+     * Finds the index of the largest value in an array.
      *
      * @param arr
      * @return the index of the largest value in an array
