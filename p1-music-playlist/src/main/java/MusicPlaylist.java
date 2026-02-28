@@ -1,8 +1,32 @@
 import java.util.*;
 
 /**
- * Contains CRUD and view methods for the music playlist utilizing the Queue and
- * Stack data structures.
+ * CLI music playlist application.
+ *
+ * <p>
+ * The playlist is modeled as a {@code Queue} of song names in FIFO order.
+ * Played songs are recorded in a {@code Stack} as a LIFO history.
+ *
+ * <p>
+ * This program supports:
+ * <ul>
+ * <li>Adding songs to the end of the playlist with
+ * {@link MusicPlaylist#addSong(Scanner, Queue)}</li>
+ * <li>Playing the next song (implicitly moves it from playlist to history) with
+ * {@link MusicPlaylist#playSong(Queue, Stack)}</li>
+ * <li>Viewing the current playlist order
+ * {@link MusicPlaylist#viewPlaylist(Queue)}</li>
+ * <li>Printing the play history in most recent order with
+ * {@link MusicPlaylist#printHistory(Stack)}</li>
+ * <li>Clearing history with {@link MusicPlaylist#clearHistory(Stack)}</li>
+ * <li>Deleting a specified number of songs from history (ordered from most
+ * recent to oldest) with
+ * {@link MusicPlaylist#deleteHistory(Scanner, Stack)}</li>
+ * </ul>
+ *
+ * <p>
+ * All songs are represented as {@code String} values and are compared and
+ * printed as entered.
  */
 public class MusicPlaylist {
     public static void main(String[] args) {
@@ -48,12 +72,16 @@ public class MusicPlaylist {
     }
 
     /**
-     * Adds a song to the playlist `Queue`.
+     * Prompts the user for a song name and appends it to the end of the
+     * {@code playlist}.
+     *
+     * <p>
+     * The playlist is a FIFO structure.
      *
      * @param input
-     *            user input scanner
+     *            input scanner used to read user input.
      * @param playlist
-     *            the `Queue` of songs to add a song too
+     *            playlist {@code Queue} that stores the upcoming songs.
      */
     private static void addSong(Scanner input, Queue<String> playlist) {
         System.out.print("Enter song name: ");
@@ -63,14 +91,17 @@ public class MusicPlaylist {
     }
 
     /**
-     * Removes the head of the playlist `Queue` and pushes it to the history stack.
+     * Plays the next song in the {@code playlist}.
+     *
+     * <p>
+     * Removes the song at the head of the {@code playlist} onto {@code history}.
      *
      * @param playlist
-     *            the `Queue` of songs to play a song from
+     *            playlist {@code Queue} that stores the upcoming songs.
      * @param history
-     *            the `Stack` of songs which have been played
+     *            {@code Stack} storing previously played songs.
      * @throws IllegalStateException
-     *             if {@code playlist} is empty
+     *             if {@code playlist} is empty.
      */
     private static void playSong(Queue<String> playlist, Stack<String> history) {
         if (playlist.isEmpty()) {
@@ -83,12 +114,15 @@ public class MusicPlaylist {
     }
 
     /**
-     * Prints the history `Stack` in reverse chronological order.
+     * Prints the play {@code history} in reverse chronological order.
+     *
+     * <p>
+     * This methods reserves {@code history}.
      *
      * @param history
-     *            the `Stack` of songs which have been played
+     *            {@code Stack} storing previously played songs.
      * @throws IllegalStateException
-     *             if {@code history} is empty
+     *             if {@code history} is empty.
      */
     private static void printHistory(Stack<String> history) {
         if (history.isEmpty()) {
@@ -108,10 +142,13 @@ public class MusicPlaylist {
     }
 
     /**
-     * Clears the history `Stack` by popping all its elements.
+     * Removes all songs from the play {@code history}.
+     *
+     * <p>
+     * After this methods returns, {@code history} is empty.
      *
      * @param history
-     *            the `Stack` of songs which have been played
+     *            {@code Stack} storing previously played songs.
      */
     private static void clearHistory(Stack<String> history) {
         while (!history.isEmpty()) {
@@ -120,20 +157,25 @@ public class MusicPlaylist {
     }
 
     /**
-     * Deletes the history `Stack` in either chronological or reverse chronological
-     * order.
+     * Deletes a user specified number of songs from the play {@code history}.
      *
-     * The user inputted number is the amount to delete. If the number is signed the
-     * deletion happens in chronological order, otherwise elements are deleted in
-     * reverse chronological order
+     * <p>
+     * The user enters an integer:
+     * <ul>
+     * <li>If the number is positive, the method deletes from the most recent
+     * history.</li>
+     * <li>If the number if negative, the method deletes from the oldest
+     * history.</li>
+     * <li>If the number is zero, no changes are made.</li>
+     * </ul>
      *
      * @param input
-     *            user input scanner
+     *            input scanner used to read the delete count.
      * @param history
-     *            the `Stack` of songs which have been played
+     *            {@code Stack} storing previously played songs.
      * @throws IllegalArgumentException
      *             if {@code normalizedDelete} is greater than the size of
-     *             {@code history}
+     *             {@code history.size()}.
      */
     private static void deleteHistory(Scanner input, Stack<String> history) {
         System.out.println("A positive number will delete from recent history.");
@@ -175,12 +217,15 @@ public class MusicPlaylist {
     }
 
     /**
-     * Prints the playlist `Queue` order.
+     * Prints the current {@code playlist} in play order.
+     *
+     * <p>
+     * This method preserves {@code playlist}.
      *
      * @param playlist
-     *            the `Queue` of songs to play a song from
+     *            playlist {@code Queue} that stores the upcoming songs.
      * @throws IllegalStateException
-     *             if {@code playlist} is empty
+     *             if {@code playlist} is empty.
      */
     private static void viewPlaylist(Queue<String> playlist) {
         if (playlist.isEmpty()) {
