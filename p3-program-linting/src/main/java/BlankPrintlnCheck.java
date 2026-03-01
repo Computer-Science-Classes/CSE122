@@ -9,6 +9,9 @@ import java.util.*;
  * <p>
  * This check enforces the use of {@code System.out.println()} instead of
  * printing an empty string.
+ *
+ * <p>
+ * Implements {@link Check}.
  */
 public final class BlankPrintlnCheck implements Check {
     /**

@@ -8,6 +8,9 @@ import java.util.*;
  *
  * <p>
  * Lines longer than 100 {@code Characters} are considered a violation.
+ *
+ * <p>
+ * Implements {@link Check}.
  */
 public final class LongLineCheck implements Check {
     /**

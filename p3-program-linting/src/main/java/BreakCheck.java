@@ -10,6 +10,8 @@ import java.util.*;
  * {@code //}) is considered a violation. Content appearing after {@code //} is
  * ignored.
  *
+ * <p>
+ * Implements {@link Check}.
  */
 public final class BreakCheck implements Check {
     /**
