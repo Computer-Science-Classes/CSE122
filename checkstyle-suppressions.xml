@@ -7,6 +7,6 @@
 
   <!-- Provided Files from CSE 122 C2: Twitter Trends project -->
   <suppress checks=".*"
-            files=".*[\\/](Picture|Tweet)\.java"/>
+            files=".*[\\/](Picture|Tweet|Check)\.java"/>
 
 </suppressions>

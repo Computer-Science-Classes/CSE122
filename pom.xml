@@ -19,6 +19,7 @@
     <module>p0-stonks</module>
     <module>p1-music-playlist</module>
     <module>p2-absurdle</module>
+    <module>p3-program-linting</module>
   </modules>
 
   <properties>
