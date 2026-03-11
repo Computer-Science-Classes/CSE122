@@ -328,8 +328,11 @@ public class Tweet {
         for (int i = 0; i < pixels.length; i++) {
             for (int j = 0; j < pixels[i].length; j++) {
                 Color color = pixels[i][j];
+                @SuppressWarnings("unused")
                 int red = (int) Math.round(color.getRed() / 51.0);
+                @SuppressWarnings("unused")
                 int green = (int) Math.round(color.getGreen() / 51.0);
+                @SuppressWarnings("unused")
                 int blue = (int) Math.round(color.getBlue() / 51.0);
                 // int ansiCode1 = 16 + 36 * red + 6 * green + blue;
                 int ansiCode2 = 16 + (36 * (color.getRed() / 51)) + (6 * (color.getGreen() / 51))

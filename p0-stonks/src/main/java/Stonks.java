@@ -54,7 +54,6 @@ public class Stonks {
             }
         }
 
-        sc.close();
     }
 
     /**
@@ -196,7 +195,6 @@ public class Stonks {
             }
         }
 
-        ps.close();
     }
 
     /**
@@ -224,7 +222,6 @@ public class Stonks {
             fileScan.next(); // yield
         }
 
-        fileScan.close();
         return symbols;
     }
 
@@ -253,7 +250,6 @@ public class Stonks {
             fileScan.next(); // y yield
         }
 
-        fileScan.close();
         return prices;
     }
 

@@ -57,8 +57,6 @@ public class TodoListManager {
                 printTodos(todos);
             }
         }
-
-        console.close();
     }
 
     /**
@@ -169,7 +167,6 @@ public class TodoListManager {
             todos.add(file.nextLine());
         }
 
-        file.close();
     }
 
     /**
@@ -192,6 +189,5 @@ public class TodoListManager {
             ps.println(todos.get(i));
         }
 
-        ps.close();
     }
 }

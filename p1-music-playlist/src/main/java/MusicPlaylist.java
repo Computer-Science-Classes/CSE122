@@ -67,8 +67,6 @@ public class MusicPlaylist {
                 quit = true;
             }
         }
-
-        input.close();
     }
 
     /**

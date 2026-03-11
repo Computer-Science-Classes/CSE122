@@ -6,7 +6,7 @@
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>p0-stonks</artifactId>
+    <artifactId>c3-oop-it</artifactId>
     <packaging>jar</packaging>
     <build>
         <plugins>
@@ -14,7 +14,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>Stonks</mainClass>
+                    <mainClass>StonksMain</mainClass>
                 </configuration>
             </plugin>
         </plugins>

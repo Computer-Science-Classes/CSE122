@@ -215,17 +215,21 @@ public class Absurdle {
      * @return a {@code String} of colored tiles representing the match pattern
      */
     public static String patternFor(String word, String guess) {
-        // 256 ASCII characters
-        int[] wordChars = new int[256];
+        Map<Character, Integer> wordChars = new HashMap<>();
 
         // gray = 0, yellow = 1, green = 2
         int[] pattern = new int[guess.length()];
         String out = "";
 
         for (int i = 0; i < word.length(); i++) {
-            // Initialize counts from word
             char c = word.charAt(i);
-            wordChars[(int) c]++;
+
+            // Initialize counts from word
+            if (wordChars.containsKey(c)) {
+                wordChars.put(c, wordChars.get(c) + 1);
+            } else {
+                wordChars.put(c, 1);
+            }
 
             // Initialize pattern with all 0's
             pattern[i] = 0; // gray = 0
@@ -237,7 +241,7 @@ public class Absurdle {
 
             if (c == word.charAt(i)) {
                 pattern[i] = 2; // green = 2
-                wordChars[(int) c]--;
+                wordChars.put(c, wordChars.get(c) - 1);
             }
         }
 
@@ -247,9 +251,9 @@ public class Absurdle {
 
             if (pattern[i] != 2) {
                 // Rest of non 0 chars must be yellows or grays
-                if (wordChars[(int) c] != 0) {
+                if (wordChars.containsKey(c) && wordChars.get(c) != 0) {
                     pattern[i] = 1; // yellow = 1
-                    wordChars[(int) c]--;
+                    wordChars.put(c, wordChars.get(c) - 1);
                 }
             }
         }

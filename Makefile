@@ -1,4 +1,4 @@
-.PHONY: compile run fmt lint clean
+.PHONY: compile run test fmt lint clean
 
 compile:
 	cd $(module) && mvn -DskipTests compile
@@ -6,6 +6,9 @@ compile:
 run: compile
 	mkdir -p $(module)/run
 	cd $(module)/run && mvn -f ../pom.xml exec:java
+
+test:
+	cd $(module) && mvn test
 
 fmt:
 	mvn spotless:apply
